@@ -48,7 +48,7 @@ const location = useLocation();
                 onClick={() => handleSeatclick(seatId)}
                 key={seatId}
                 className={`h-8 w-8 border cursor-pointer transition-colors duration-200
-                  ${selectedSeats.includes(seatId) ? "bg-green-500 text-white border-green-600" : "bg-gray-400 text-white border-green-300"}
+                  ${selectedSeats.includes(seatId) ? "bg-green-500 text-white border-orange-300" : "bg-gray-400 text-white "}
                 `}
               >
                 {seatId}
@@ -73,7 +73,7 @@ const location = useLocation();
     <div>
       <div className="flex flex-col mt-1 space-y-3">
         <h1 className="text-2xl font-semibold text-center py-5">Select your seat</h1>
-        <h1>{movie ? movie.title : "Movie not found"}</h1>
+        <h1 className='flex items-center justify-center mb-10 font-semibold text-orange-500 text-2xl'>{movie ? movie.title : "Movie not found"}</h1>
         {/* Time selection */}
         <div className="flex items-center justify-center gap-4 mb-4">
           {dummyTimes.map((time) => (

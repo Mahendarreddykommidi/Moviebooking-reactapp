@@ -64,7 +64,7 @@ const Moviedetails = () => {
         </div>
               <section className="py-5 px-6 md:px-16 lg:px-24 mx-auto">
           <h2 className="text-xl font-bold mb-4">Upcoming Movies</h2>
-          <div className="flex items-center justify-center gap-10 max-md:flex flex-wrap">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
             {upcoming.slice(0, 4).map((movie) => (
               <div key={movie.id} className="w-48">
                 <Moviecard id={movie.id} movie={movie} />

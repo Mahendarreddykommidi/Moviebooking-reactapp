@@ -75,7 +75,7 @@ const location = useLocation();
         <h1 className="text-2xl font-semibold text-center py-5">Select your seat</h1>
         <h1 className='flex items-center justify-center mb-10 font-semibold text-orange-500 text-2xl'>{movie ? movie.title : "Movie not found"}</h1>
         {/* Time selection */}
-        <div className="flex items-center justify-center gap-4 mb-4">
+        <div className="flex items-center justify-center gap-4 mb-4 px-6 md:px-16">
           {dummyTimes.map((time) => (
             <button
               key={time}
@@ -92,7 +92,7 @@ const location = useLocation();
        
         <p className="text-center">SCREEN SIDE</p>
 
-        <div className="flex flex-col items-center mt-10 text-xs text-gray-300">
+        <div className="flex flex-col items-center mt-10 text-xs text-gray-300 px-6 md:px-16">
           <div className="grid grid-cols-2 md:grid-cols-1 gap-8 md:gap-2 mb-5">{groupRows[0]?.map((row) => renderseats(row))}
             
           </div>
@@ -119,7 +119,12 @@ const location = useLocation();
                 },
               })
             }
-            className="flex items-center gap-2 px-10 py-3 font-medium rounded-full bg-orange-600 text-white hover:bg-red-300 transition duration-300"
+            className={`flex items-center gap-2 px-10 py-3 font-medium rounded-full transition duration-300
+              ${selectedSeats.length === 0
+                ? "bg-gray-400 text-white cursor-not-allowed"
+                : "bg-orange-600 text-white hover:bg-red-300"}
+            `}
+            disabled={selectedSeats.length === 0}
           >
             Proceed to checkout <span className="flex items-center"><ArrowRight strokeWidth={4} className="w-5" /></span>
           </button>

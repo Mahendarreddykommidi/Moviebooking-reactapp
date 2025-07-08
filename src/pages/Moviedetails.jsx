@@ -36,7 +36,7 @@ const Moviedetails = () => {
   return (
     <div>
       <div
-        className="min-h-[50vh] flex items-center justify-center py-12 px-4"
+        className="min-h-[50vh] flex items-center justify-center py-12 px-4 brightness-65"
         style={
           movie.backdrop_path
             ? {

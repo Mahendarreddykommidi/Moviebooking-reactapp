@@ -30,7 +30,7 @@ const Moviecard = ({ movie, id }) => {
       <p className="text-base text-center font-semibold text-gray-800 truncate w-full mb-2">{movie.title}</p>
       <p className="mb-2">{formatDate(movie.release_date)}</p>
       <button
-        onClick={() => navigate(`/movies/${id}`)}
+        onClick={() => {navigate(`/movies/${id}`),scrollTo(0,0)}}
         className="bg-red-500 w-full text-white px-6 py-2 rounded-sm font-medium hover:bg-blue-700 transition"
       >
         Book now
